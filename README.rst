@@ -20,11 +20,11 @@ Configure HeadEgg
 
 ::
 
-    HEADEGG_QUOTES = {
-        'Ralph': "Me fail English? That's unpossible!",
-        'Burns': 'Ahoy-hoy!',
-        'Bart': 'So I says to Mabel, I says...',
-    }
+    HEADEGG_QUOTES = (
+        ('Ralph', "Me fail English? That's unpossible!"),
+        ('Burns', 'Ahoy-hoy!'),
+        ('Bart', 'So I says to Mabel, I says...'),
+    )
 
 
 Use HeadEgg

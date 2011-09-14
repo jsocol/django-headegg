@@ -10,14 +10,14 @@ except ImportError:
 if hasattr(settings, 'HEADEGG_QUOTES'):
     QUOTES = settings.HEADEGG_QUOTES
 else:
-    QUOTES = {
-        'Zoidberg': 'Why not Zoidberg?'
-    }
+    QUOTES = (
+        ('Zoidberg', 'Why not Zoidberg?'),
+    )
 
 
 class HeadEgg(object):
     def process_response(self, request, response):
-        key = choice(QUOTES.keys())
+        key, value = choice(QUOTES)
         safe_key = 'X-' + re.sub(r'\W+', '-', key)
-        response[safe_key] = QUOTES[key]
+        response[safe_key] = value
         return response
